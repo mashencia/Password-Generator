@@ -28,9 +28,36 @@ function getIncludeSpecChars(){
 
 //function that will generate the passwords based on user preferences
 function generatePassword(){
+    let password = "";
     let passwordLength = getLength();
+    let pswdArray = [passwordLength];
+    //filling the password array with lowercase characters by default
+    for (let i=0; i < passwordLength; i++){
+        pswdArray[i] = lowercaseCharacters[Math.floor(Math.random() * lowercaseCharacters.length)];
+    }
+    //adding random number of uppercase letters (must be at least 1 but less than length-1)
     let includeUppercase = getIncludeUppercase();
+    let numOfUppercase = Math.random() * (passwordLength - 1) + 1;
+    if (includeUppercase){
+        for (let i=0; i < numOfUppercase; i++){
+            let randomIndex = Math.floor(Math.random() * passwordLength);
+            pswdArray[randomIndex] = uppercaseCharacters[Math.floor(Math.random() * uppercaseCharacters.length)];
+        }
+    }
     let includeNumbers = getIncludeNumbers();
+    let numOfNumbers = Math.random() * (passwordLength - 2) + 1;
+    if (includeNumbers){
+        for (let i=0; i < numOfNumbers; i++){
+            let randomIndex = Math.floor(Math.random() * passwordLength);
+            pswdArray[randomIndex] = numberCharacters[Math.floor(Math.random() * numberCharacters.length)];
+        }   
+    }
     let includeSpecChars = getIncludeSpecChars();
-
+    let numOfSpecChars = Math.random() * (passwordLength - 3) + 1;
+    if (includeSpecChars){
+        for (let i=0; i < numOfSpecChars; i++){
+            let randomIndex = Math.floor(Math.random() * passwordLength);
+            pswdArray[randomIndex] = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+        }   
+    }
 }
