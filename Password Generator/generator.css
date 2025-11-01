@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Karla';
+  src: url('fonts/karla-regular.woff2') format('woff2'),
+       url('fonts/karla-regular.woff') format('woff');
+}
+body{
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    background-color: #1F2937;
+    background-size: cover;
+    font-weight: 600;
+    color: #F9FAFB;
+    text-align: center;
+    margin: 0;
+    padding-top: 10vw;
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    text-align: center;
+}
+
+#generate {
+    color: #10B981;
+}
+button{
+    align-items: center;
+
+    padding: 20px;
+    border-radius: 12px;
+    border-width: 0cap;
+    background-color: #10B981;
+    color: #F9FAFB;
+    font-size: larger;
+    margin-top: 2%;
+}
+.headers{
+    position: relative;
+    margin-left: 33.33vw;
+    width: 33.33vw;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#Gpassword{
+    font-size: x-large;
+}
+ #slogan{
+        font-size:small;
+        font-weight: 200;
+        color:#D5D4D8
+    }
+
+.length{
+    font-family: "Karla", sans-serif;;
+    font-size: medium;
+    font-weight:300
+}

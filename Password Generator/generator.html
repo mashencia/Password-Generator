@@ -3,19 +3,25 @@
         <link rel="stylesheet" href = "generator.css">
     </head>
     <body>
-        
-
+    <div class="container">
+        <div class = "headers">
         <h1 id="generate">Generate a</h1>
         <h1 id="Gpassword">secure password</h1>
         <h2 id="slogan">Customized by you, and safely randomized by us</h2>
-
+        </div>
+        
         <!--Customizing the length-->
-        <p>Please select the length of the password (select only 1 option):</p>
+        <div class = "length">
+        <p id = "length1">Please select the length of the password (select only 1 option):</p>
         <label><input type="checkbox" name="lengthOption" value="8" onclick="selectLength(this)"> 8 Characters</label><br>
         <label><input type="checkbox" name="lengthOption" value="12" onclick="selectLength(this)"> 12 Characters</label><br>
         <label><input type="checkbox" name="lengthOption" value="16" onclick="selectLength(this)"> 16 Characters</label><br>
 
+        </div>
+        
         <!--Customizing the character set-->
+        <div class="custom">
+            <p id = "custom1">Customize allowed characters:</p>
          <label>
             <input type="checkbox" id="uppercase" onchange="getIncludeUppercase()"> Include Uppercase
         </label>
@@ -27,11 +33,13 @@
         <label>
             <input type="checkbox" id="specChars" onchange="getIncludeSpecChars()"> Include Special Characters
         </label>
-        
+         </div>
+       
         <!--Call for the function in js for pswd generation-->
         <button onclick="generateTwoPswd()">Generate passwords</button>
         <p id="pswd1"></p>
         <p id="pswd2"></p>
-        <script src="generator.js"></script>
+    </div>
+    <script src="generator.js"></script>
     </body>
 </html>
