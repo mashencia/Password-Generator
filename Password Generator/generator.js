@@ -5,9 +5,23 @@ const numberCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const specialCharacters = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
 //function that allows the user to choose password length from given options
+let selectedLength = 0 //initializign a global variable for the length of pswd
+function selectLength(checkbox){
+    const checkboxes = document.getElementsByName('lengthOption')
+
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] !== checkbox) {
+            checkboxes[i].checked = false;
+        }
+    }
+
+    selectedLength = checkbox.checked ? parseInt(checkbox.value) : 0;
+}
+
+//if nothing selected for length (8 is default)
 function getLength(){
-    let length = document.getElementById("length").value;
-    return length; //the length options will be 8+, 12+, 16+
+    // Default to 12 if nothing selected
+    return selectedLength || 8;
 }
 
 //functinos that allows thre user to choose to include/exclude uppercase letters, numbers and special characters
@@ -41,6 +55,7 @@ function generatePassword(){
     let passwordLength = getLength(); //getting the desired password length from user
     let pswdArray = new Array(passwordLength); //array that will be used as temp to build the password
     let allowedChars = []; //array that will contain all characters allowed based on user preferences
+    allowedChars = allowedChars.concat(lowercaseCharacters); //lowercase as default
 
     //filling the password array with lowercase characters by default
     //default option that will ensure a password is generated even if no other options are selected
@@ -76,8 +91,22 @@ function generatePassword(){
     }
     //shuffling the password using Fisher-Yates alg.
     for(let i = pswdArray.length - 1; i > 0; i--){
-        let j = Math.random() * (i + 1);
+        let j = Math.floor(Math.random() * (i + 1));
         //swapping elements at indecies i and j
         [pswdArray[i], pswdArray[j]] = [pswdArray[j], pswdArray[i]];
     }
+
+    for(let i = 0; i<pswdArray.length; i++){
+        password += pswdArray[i];
+    }
+
+    return password
+}
+
+function generateTwoPswd(){
+    let password1 = generatePassword()
+    let password2 = generatePassword()
+
+    document.getElementById("pswd1").textContent = password1
+    document.getElementById("pswd2").textContent = password2
 }
