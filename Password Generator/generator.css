@@ -37,9 +37,13 @@ button{
     background-color: #10B981;
     color: #F9FAFB;
     font-size: larger;
+    font-weight: bold;
     margin-top: 2%;
     margin-left: 33.33vw;
     width: 33.33vw;
+}
+#custom1{
+    font-weight: bold;
 }
 .headers{
     position: relative;
@@ -74,6 +78,8 @@ button{
 }
 
 .custom{
+    font-family: "Karla", sans-serif;
+    font-size: medium;
     font-weight: lighter;
     position: relative;
     margin-left: 33.33vw;
@@ -81,4 +87,14 @@ button{
     padding: 5px;
     box-sizing: border-box;
     text-align: left;
+}
+
+.pswd1,.pswd2{
+    margin-top: 4%;
+    position: relative;
+    margin-left: 33.33vw;
+    width: 33.33vw;
+    border-radius: 5px;
+    padding: 1px;
+    background-color: #2d3745;
 }
