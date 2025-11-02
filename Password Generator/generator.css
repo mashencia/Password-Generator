@@ -15,7 +15,7 @@ body{
     color: #F9FAFB;
     text-align: center;
     margin: 0;
-    padding-top: 10vw;
+    
     
     display: flex;
     flex-direction: column;
@@ -23,13 +23,14 @@ body{
     justify-content: flex-start;
     text-align: center;
 }
-
+.container{
+    width: 50vw;
+}
 #generate {
     color: #10B981;
 }
 button{
-    align-items: center;
-
+    position: relative;
     padding: 20px;
     border-radius: 12px;
     border-width: 0cap;
@@ -37,6 +38,8 @@ button{
     color: #F9FAFB;
     font-size: larger;
     margin-top: 2%;
+    margin-left: 33.33vw;
+    width: 33.33vw;
 }
 .headers{
     position: relative;
@@ -50,14 +53,32 @@ button{
 #Gpassword{
     font-size: x-large;
 }
- #slogan{
-        font-size:small;
-        font-weight: 200;
-        color:#D5D4D8
-    }
+#slogan{
+    font-size:small;
+    font-weight: 200;
+    color:#D5D4D8
+}
+
 
 .length{
-    font-family: "Karla", sans-serif;;
+    font-family: "Karla", sans-serif;
     font-size: medium;
-    font-weight:300
+    font-weight:300;
+    color: #1F2937;
+    padding-top: 0.2vw;
+    padding-bottom: 0.2vw;
+    margin-left: 33vw;
+    width: 33vw ;
+    background-color: #D5D4D8;
+    border-radius: 12px;
+}
+
+.custom{
+    font-weight: lighter;
+    position: relative;
+    margin-left: 33.33vw;
+    width: 33.33vw;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: left;
 }
